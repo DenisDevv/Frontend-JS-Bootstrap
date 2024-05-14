@@ -13,7 +13,7 @@
     </style>
   </head>
   <body>
-    <h1 id="testo" class="col-6 offset-3 text-center" style="color: blue" onclick="cambioColore()">Ciao mondo</h1>
+    <h1 id="testo" class="col-6 text-center w-100" style="color: blue" onclick="cambioColore()" onmouseenter="cambioColore()">Ciao mondo!</h1>
     <div id="carouselExample" class="carousel slide w-50 col-6 offset-3">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -39,6 +39,11 @@
         function cambioColore() {
             const testo = document.getElementById("testo");
             const body = document.querySelector("body");
+            if (testo.innerText === "Ciao mondo!") {
+                testo.innerText = "Hello world!";
+            } else {
+                testo.innerText = "Ciao mondo!";
+            }
             const r = Math.floor(Math.random() * 256);
             const g = Math.floor(Math.random() * 256);
             const b = Math.floor(Math.random() * 256);
